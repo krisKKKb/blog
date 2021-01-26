@@ -11,8 +11,8 @@
 <body class="p-4">
     <table class="table-auto border border-solid w-full">
         <thead>
-            <td class="p-4 bg-gray-200 font-bold text-left">Book Title</td>
-            <td class="p-4 bg-gray-200 font-bold text-center">Book Release Date</td>
+            <td class="p-4 bg-gray-200 font-bold text-left"><a href="/?sort=title&order={{ $order }}">Book Title </a></td>
+            <td class="p-4 bg-gray-200 font-bold text-center"> <a href="/?sort=release_date&order={{ $order }}">Book Release Date </a></td>
         </thead>
         @foreach($books as $book)
         <tr>
@@ -21,6 +21,9 @@
         </tr>
         @endforeach
     </table>
+    <div>
+    {{ $books ->links() }}
+    </div>
 </body>
 
 </html>
